@@ -1,16 +1,13 @@
 from django.shortcuts import render
 from .forms import ImageForm
-import cv2 as cv
-import base64
+
 
 # Create your views here.
-def image_upload_view(request):
-    """Process images uploaded by users"""
+def image_view(request):
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            # Get the current instance object to display in the template
             img_obj = form.instance
 
 
