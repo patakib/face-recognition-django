@@ -15,15 +15,7 @@ def modify(image):
 # Create your models here.
 class Image(models.Model):
     title = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='images')
-    image2 = models.ImageField() #magic
-
-    #here comes the magic
-    def save(self, *args, **kwargs):
-        self.image2 = modify(self.image)
-
-        super().save(*args, **kwargs)
-    #end of magic
+    img = models.ImageField(upload_to='images')
 
     def __str__(self):
         return self.title
