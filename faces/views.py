@@ -9,8 +9,6 @@ def image_view(request):
         if form.is_valid():
             form.save()
             img_obj = form.instance
-
-
             return render(request, 'index.html', {'form': form, 'img_obj': img_obj})
     else:
         form = ImageForm()
