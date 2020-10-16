@@ -21,7 +21,7 @@ from faces import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('upload/', views.image_view)
+    path('', views.image_view)
 ]
 
 if settings.DEBUG:
